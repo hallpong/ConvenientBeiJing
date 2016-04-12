@@ -29,14 +29,17 @@ public class MainActivity extends SlidingFragmentActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
-		setBehindContentView(R.layout.left_menu);
-		SlidingMenu slidingMenu = getSlidingMenu();
-		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-		slidingMenu.setBehindOffset(300);
+		setBehindContentView(R.layout.left_menu);//设置侧滑栏的布局
+		SlidingMenu slidingMenu = getSlidingMenu();//获取SlidingMenu实例
+		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//设置滑动模式
+		slidingMenu.setBehindOffset(400);//设置滑动后剩下的偏移量
 
 		initFragments();
 	}
 
+	/**
+	 * 将Fragment布局动态放入MainActivity中
+	 */
 	private void initFragments() {
 		FragmentManager fm = getSupportFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();

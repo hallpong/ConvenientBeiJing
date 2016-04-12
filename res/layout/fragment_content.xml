@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
     
-    <TextView 
-        android:layout_width="wrap_content"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    
+    <RadioGroup
+        android:id="@+id/rg_home"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="这是主页面"/>
+        android:background="@drawable/bottom_tab_bg"
+        android:orientation="horizontal"
+        >
+        
+        <RadioButton 
+            android:id="@+id/rb_home"
+			style="@style/RadioButtonTheme"
+            android:drawableTop="@drawable/rbt_main_selector_home"
+            android:text="首页"/>
+        
+        <RadioButton 
+            android:id="@+id/rb_news"
+			style="@style/RadioButtonTheme"
+            android:drawableTop="@drawable/rbt_main_selector_news"
+            android:text="新闻中心"/>
+        
+        <RadioButton 
+            android:id="@+id/rb_smart"
+			style="@style/RadioButtonTheme"
+            android:drawableTop="@drawable/rbt_main_selector_service"
+            android:text="智慧服务"/>
+        
+        <RadioButton 
+            android:id="@+id/rb_gov"
+			style="@style/RadioButtonTheme"
+            android:drawableTop="@drawable/rbt_main_selector_gov"
+            android:text="政务"/>
+        
+        <RadioButton 
+            android:id="@+id/rb_setting"
+			style="@style/RadioButtonTheme"
+            android:drawableTop="@drawable/rbt_main_selector_setting"
+            android:text="设置"/>
+        
+    </RadioGroup>
 
-</RelativeLayout>
+</LinearLayout>
