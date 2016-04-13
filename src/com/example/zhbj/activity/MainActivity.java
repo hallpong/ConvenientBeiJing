@@ -29,10 +29,10 @@ public class MainActivity extends SlidingFragmentActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
-		setBehindContentView(R.layout.left_menu);//设置侧滑栏的布局
-		SlidingMenu slidingMenu = getSlidingMenu();//获取SlidingMenu实例
-		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//设置滑动模式
-		slidingMenu.setBehindOffset(400);//设置滑动后剩下的偏移量
+		setBehindContentView(R.layout.left_menu);// 设置侧滑栏的布局
+		SlidingMenu slidingMenu = getSlidingMenu();// 获取SlidingMenu实例
+		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);// 设置滑动模式
+		slidingMenu.setBehindOffset(400);// 设置滑动后剩下的偏移量
 
 		initFragments();
 	}
@@ -48,5 +48,27 @@ public class MainActivity extends SlidingFragmentActivity {
 		transaction.replace(R.id.fl_content, new ContentFragment(),
 				FRAGMENT_CONTENT);
 		transaction.commit();
+	}
+
+	/**
+	 * 获取左侧边栏Fragment
+	 * @return
+	 */
+	public LeftMenuFragment getLeftMenuFragment() {
+		FragmentManager fm = getSupportFragmentManager();
+		LeftMenuFragment leftMenuFragment = (LeftMenuFragment) fm
+				.findFragmentByTag(FRAGMENT_LEFT_MENU);
+		return leftMenuFragment;
+	}
+	
+	/**
+	 * 获取内容Fragment
+	 * @return
+	 */
+	public ContentFragment getContentFragment() {
+		FragmentManager fm = getSupportFragmentManager();
+		ContentFragment contentFragment = (ContentFragment) fm
+				.findFragmentByTag(FRAGMENT_CONTENT);
+		return contentFragment;
 	}
 }

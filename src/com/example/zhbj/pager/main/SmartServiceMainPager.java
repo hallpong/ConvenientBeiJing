@@ -1,4 +1,4 @@
-package com.example.zhbj.pager;
+package com.example.zhbj.pager.main;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -6,22 +6,24 @@ import android.view.Gravity;
 import android.widget.TextView;
 
 /**
- * 首页的五个viewpager中的第二个(新闻中心)viewpager
+ * 首页的五个viewpager中的第三个(智慧服务)viewpager
  * @author Macintosh
  *
  */
-public class NewsCenterMainPager extends BaseMainPager{
+public class SmartServiceMainPager extends BaseMainPager{
 
-	public NewsCenterMainPager(Activity activity) {
+	public SmartServiceMainPager(Activity activity) {
 		super(activity);
 	}
 	
 	@Override
 	public void initData() {
-		tvTitle.setText("新闻");
+		tvTitle.setText("生活");
+		
+		setSlidingMenuEnable(true);
 		
 		TextView tvContent=new TextView(mActivity);
-		tvContent.setText("新闻中心");
+		tvContent.setText("智慧服务");
 		tvContent.setTextColor(Color.RED);
 		tvContent.setTextSize(30);
 		tvContent.setGravity(Gravity.CENTER);

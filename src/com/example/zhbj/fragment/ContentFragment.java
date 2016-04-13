@@ -11,12 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import com.example.zhbj.R;
-import com.example.zhbj.pager.BaseMainPager;
-import com.example.zhbj.pager.GovAffairHomeMainPager;
-import com.example.zhbj.pager.HomeMainPager;
-import com.example.zhbj.pager.NewsCenterMainPager;
-import com.example.zhbj.pager.SettingMainPager;
-import com.example.zhbj.pager.SmartServiceMainPager;
+import com.example.zhbj.pager.main.BaseMainPager;
+import com.example.zhbj.pager.main.GovAffairHomeMainPager;
+import com.example.zhbj.pager.main.HomeMainPager;
+import com.example.zhbj.pager.main.NewsCenterMainPager;
+import com.example.zhbj.pager.main.SettingMainPager;
+import com.example.zhbj.pager.main.SmartServiceMainPager;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
@@ -103,6 +103,7 @@ public class ContentFragment extends BaseFragment {
 				
 			}
 		});
+		//初始化首页数据
 		mViewPagerList.get(0).initData();
 	}
 
@@ -129,5 +130,14 @@ public class ContentFragment extends BaseFragment {
 		public void destroyItem(ViewGroup container, int position, Object object) {
 			container.removeView((View) object);
 		}
+	}
+
+	/**
+	 * 获取NewsCenterMainPager页面
+	 * @return NewsCenterMainPager对象
+	 */
+	public NewsCenterMainPager getNewsCenterMainPager() {
+		
+		return (NewsCenterMainPager) mViewPagerList.get(1);
 	}
 }

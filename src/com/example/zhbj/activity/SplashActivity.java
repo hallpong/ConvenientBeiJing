@@ -1,7 +1,6 @@
 package com.example.zhbj.activity;
 
 import com.example.zhbj.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;

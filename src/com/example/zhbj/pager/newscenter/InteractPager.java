@@ -1,34 +1,29 @@
-package com.example.zhbj.pager;
+package com.example.zhbj.pager.newscenter;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 /**
- * 首页的五个viewpager中的第五个(设置)viewpager
+ * 侧滑菜单栏互动选项所对应的布局
  * @author Macintosh
  *
  */
-public class SettingMainPager extends BaseMainPager{
+public class InteractPager extends NewsCenterBasePager{
 
-	public SettingMainPager(Activity activity) {
+	public InteractPager(Activity activity) {
 		super(activity);
 	}
-	
+
 	@Override
-	public void initData() {
-		tvTitle.setText("设置");
-		
+	public View initView() {
 		TextView tvContent=new TextView(mActivity);
-		tvContent.setText("设置");
+		tvContent.setText("互动页面");
 		tvContent.setTextColor(Color.RED);
 		tvContent.setTextSize(30);
 		tvContent.setGravity(Gravity.CENTER);
-		
-		//向FrameLayout中动态添加View
-		flContent.addView(tvContent);
-		
+		return tvContent;
 	}
-
 }

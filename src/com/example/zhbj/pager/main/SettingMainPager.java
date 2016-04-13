@@ -1,27 +1,31 @@
-package com.example.zhbj.pager;
+package com.example.zhbj.pager.main;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 /**
- * 首页的五个viewpager中的第三个(智慧服务)viewpager
+ * 首页的五个viewpager中的第五个(设置)viewpager
  * @author Macintosh
  *
  */
-public class SmartServiceMainPager extends BaseMainPager{
+public class SettingMainPager extends BaseMainPager{
 
-	public SmartServiceMainPager(Activity activity) {
+	public SettingMainPager(Activity activity) {
 		super(activity);
 	}
 	
 	@Override
 	public void initData() {
-		tvTitle.setText("生活");
+		tvTitle.setText("设置");
+		
+		ibtMenu.setVisibility(View.GONE);//隐藏菜单按钮
+		setSlidingMenuEnable(false);//关闭侧边栏功能
 		
 		TextView tvContent=new TextView(mActivity);
-		tvContent.setText("智慧服务");
+		tvContent.setText("设置");
 		tvContent.setTextColor(Color.RED);
 		tvContent.setTextSize(30);
 		tvContent.setGravity(Gravity.CENTER);
